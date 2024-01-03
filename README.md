@@ -9,6 +9,5 @@ is older than `system_file` then `sync.sh` will copy the `system_file` into
 
 ## Adding a file for synchronization
 
-Simply add the `repo_file` and `system_file` paths to `files` in `sync.sh` just
-like for the given examples. Also copy the file from your system in to the
-`repo_file` path.
+Copy the file from your system to the `repo_file` path.  Then, add the 
+`repo_file` and `system_file` paths to `files` in `sync.sh` as presented.
