@@ -137,8 +137,9 @@ require("lazy").setup({
     -- treesitter-textobjects for language specific selection
     -- see config in nvim-treesitter.configs->textobjects
     -- see list of textobjects by language on github-page
-    {
-        "nvim-treesitter/nvim-treesitter-textobjects",
-    },
+    "nvim-treesitter/nvim-treesitter-textobjects",
+
+    -- me hopyfully learning some vim skillz
+    "ThePrimeagen/vim-be-good",
 
 }, opts)
