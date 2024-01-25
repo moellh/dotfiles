@@ -4,6 +4,7 @@ declare -A files=(
     "nvim/init.lua"        "$HOME/.config/nvim/init.lua"
     "nvim/lua/options.lua" "$HOME/.config/nvim/lua/options.lua"
     "nvim/lua/plugins.lua" "$HOME/.config/nvim/lua/plugins.lua"
+    "tmux/tmux.conf"       "$HOME/.config/tmux/tmux.conf"
 )
 
 for repo_file in "${!files[@]}"; do

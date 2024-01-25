@@ -73,6 +73,7 @@ require("lazy").setup({
                     "html", "css",                          -- web
                     "javascript", "json",                   -- js
                     "cpp", "cmake",                         -- cpp
+                    "rust",
                     "java",                                 -- java
                     "python",                               -- python
                     "latex", "bibtex",                      -- latex
