@@ -6,6 +6,7 @@ declare -A files=(
     "nvim/lua/plugins.lua" "$HOME/.config/nvim/lua/plugins.lua"
     "tmux/tmux.conf"       "$HOME/.config/tmux/tmux.conf"
     "git/.gitconfig"       "$HOME/.gitconfig"
+    "zsh/.zshrc"           "$HOME/.zshrc"
 )
 
 for repo_file in "${!files[@]}"; do
