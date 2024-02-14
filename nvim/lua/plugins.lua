@@ -143,4 +143,26 @@ require("lazy").setup({
     -- me hopyfully learning some vim skillz
     "ThePrimeagen/vim-be-good",
 
+    {
+        "williamboman/mason.nvim",
+        opts = {
+            ensure_installed = {
+                "pyright",
+                "mypy",
+                "ruff",
+                "black",
+                "marksman",
+            },
+        }
+    },
+
+    "williamboman/mason-lspconfig.nvim",
+
+    {
+        "neovim/nvim-lspconfig",
+        config = function()
+            require "configs.lspconfig"
+        end,
+    },
+
 }, opts)

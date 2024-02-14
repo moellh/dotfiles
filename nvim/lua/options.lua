@@ -14,9 +14,6 @@ vim.opt.expandtab = true
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
 
--- "" is automatically synced with "+
-vim.opt.clipboard = "unnamedplus,unnamed"
-
 -- cursor stays in middle row if possible
 vim.opt.scrolloff = 999
 
