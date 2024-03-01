@@ -7,6 +7,7 @@ declare -A files=(
     "tmux/tmux.conf"       "$HOME/.config/tmux/tmux.conf"
     "git/.gitconfig"       "$HOME/.gitconfig"
     "zsh/.zshrc"           "$HOME/.zshrc"
+    "core/.dircolors"      "$HOME/.dircolors"
 )
 
 for repo_file in "${!files[@]}"; do

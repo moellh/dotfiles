@@ -43,3 +43,5 @@ vim.api.nvim_exec([[set cursorline]], false)
 vim.opt.textwidth = 80
 vim.api.nvim_exec([[set formatoptions-=t]], false)
 vim.api.nvim_exec([[au BufRead,BufNewFile *.md setlocal textwidth=80]], false)
+
+vim.opt.signcolumn = "yes"

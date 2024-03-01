@@ -7,6 +7,8 @@ fi
 
 # ZSHRC from moellh on 08.11.23
 
+export DATA="/mnt/data"
+
 autoload -Uz compinit
 compinit
 
@@ -29,14 +31,15 @@ bindkey "^[[B" down-line-or-beginning-search
 source ~/.zsh/powerlevel10k/powerlevel10k.zsh-theme
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
-source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
 autoload -U select-word-style
 select-word-style bash
 
 export JAVA_HOME="/usr/lib/jvm/default"
-export PATH="${PATH}:/mnt/data/studies/bfp/programming/install/bin:$JAVA_HOME/bin"
+
+export PATH="${PATH}:/mnt/data/studies/bfp/programming/install/bin"
+export PATH="${PATH}:$JAVA_HOME/bin"
+export PATH="${PATH}:$HOME/bin"
+
 export PYTHONPATH="${PYTHONPATH}:/mnt/data/studies/bfp/programming/install/lib/"
 export LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:/mnt/data/studies/bfp/programming/install/lib/"
 export MANPATH="${MANPATH}:/mnt/data/studies/bfp/programming/install/share/man/"
@@ -45,3 +48,17 @@ HISTFILE=~/.histfile
 HISTSIZE=10000
 SAVEHIST=10000
 setopt appendhistory
+
+alias ls="/bin/ls --hyperlink=auto --color=auto -F $@"
+eval "$(dircolors -b ~/.dircolors)"
+
+alias mg="kitty +kitten hyperlinked_grep --smart-case $@"
+alias icat="kitten icat"
+alias ssh="kitty +kitten ssh $@"
+
+eval "$(zoxide init zsh)"
+
+source $HOME/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $HOME/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+EDITOR="nvim"

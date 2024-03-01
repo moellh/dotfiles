@@ -1,41 +1,7 @@
---[[ ===========================================================================
-
-Neovim configuration in Lua
---------------------------------------------------------------------------------
-
-
-Contents:
----------
-
-- list of keybinds added in this file
-- lazy.nvim as plugin-manager
-- list of plugins and configs which are installed using lazy.nvim
-
-
-Keybinds:
----------
-
-from nvim-treesitter.configs->incremental-selection:
-- <leader>ss -- init selection on current AST-token
-- <leader>si -- increment selection to upper AST-node
-- <leader>sc -- increment selection to upper scope
-- <leader>sd -- decrement selection to previous lower node
-
-from nvim-treesitter.configs->textobjects->keymaps (as movement):
-- af -- outer function
-- if -- inner function
-- ac -- outer class
-- ic -- inner class
-- as -- scope
-
-]]-- ===========================================================================
-
-
 -- install lazy.nvim as plugin-manager
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
-    vim.fn.system({
-        "git",
+    vim.fn.system({ "git",
         "clone",
         "--filter=blob:none",
         "https://github.com/folke/lazy.nvim.git",
@@ -143,26 +109,29 @@ require("lazy").setup({
     -- me hopyfully learning some vim skillz
     "ThePrimeagen/vim-be-good",
 
-    {
-        "williamboman/mason.nvim",
-        opts = {
-            ensure_installed = {
-                "pyright",
-                "mypy",
-                "ruff",
-                "black",
-                "marksman",
-            },
-        }
-    },
+    "williamboman/mason.nvim",
 
-    "williamboman/mason-lspconfig.nvim",
+    {
+        "williamboman/mason-lspconfig.nvim",
+        config = function()
+            require "config.mason-lspconfig"
+        end,
+    },
 
     {
         "neovim/nvim-lspconfig",
         config = function()
-            require "configs.lspconfig"
+            require "config.lspconfig"
         end,
     },
+
+    "github/copilot.vim",
+
+    {
+        'nvim-lualine/lualine.nvim',
+        dependencies = { 'nvim-tree/nvim-web-devicons' }
+    },
+
+    "fladson/vim-kitty",
 
 }, opts)
